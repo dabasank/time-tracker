@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven 3.6.3'
-        jdk 'jdk8'
+        maven 'Maven 3.7'
+        jdk 'jdk 1.8.0'
     }
         stages {
             stage('FETCH') {
