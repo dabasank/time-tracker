@@ -1,7 +1,7 @@
-pipeline {
+pipeline 
     agent any
     tools {
-        Maven 'Maven 3.6.3'
+        maven 'M3'
         Java 'jdk 1.8.0'
     }
         stages {
