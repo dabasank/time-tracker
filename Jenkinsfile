@@ -2,7 +2,7 @@ pipeline
     agent any
     tools {
         maven 'M3'
-        Java 'jdk 1.8.0'
+        JAVA 'JAVA_HOME'
     }
         stages {
             stage('FETCH') {
