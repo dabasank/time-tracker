@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'M3'
-        JDK 'JDK8'
+        jdk 'JDK8'
     }
         stages {
             stage('FETCH') {
