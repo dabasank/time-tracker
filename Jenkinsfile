@@ -15,12 +15,12 @@ pipeline {
                 sh "mvn clean package"
             }
         }
-        //stage('Test'){
-         //   steps {
-         //       sh 'make check'
-         //       junit 'reports/**/*.xml' 
-         //   }
-      //  }
+        stage('Test'){
+            steps {
+                sh 'make check'
+                junit 'reports/**/*.xml' 
+            }
+        }
       //stage("Deploying to TOMCAT Server"){
         //  steps{
          //     sshagent(['deply_user'])
