@@ -10,23 +10,23 @@ pipeline {
                 git "https://github.com/dabasank/time-tracker.git"
             }
         }
-        stage("Parallel Stage") {
-            when {
-                branch 'master'
-            }
-            failFast true
-            parallel {
-                stage("Dummy Stage") {
-                    steps {
-                        echo "Output of a Parallel Stage step"
-                    }
+        //stage("Parallel Stage") {
+          //  when {
+            //    branch 'master'
+           // }
+            //failFast true
+            //parallel {
+              //  stage("Dummy Stage") {
+                //    steps {
+                  //      echo "Output of a Parallel Stage step"
+                    //}
+                //}
+        stage("Build the Code"){
+            steps {
+                sh "mvn clean package"
                 }
-                stage("Build the Code"){
-                    steps {
-                        sh "mvn clean package"
-                     }
-                }
             }
+        }
         stage('Test'){
             steps {
                 sh 'make check'
