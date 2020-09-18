@@ -20,6 +20,11 @@ pipeline {
                 sh 'make check'
                 junit 'reports/**/*.xml' 
             }
+            post {
+            failure{
+                echo 'JUnit Test has Failed'
+            }
+        }
         }
       //stage("Deploying to TOMCAT Server"){
         //  steps{
@@ -33,9 +38,4 @@ pipeline {
             }
         }      
     }
-     post {
-            failure{
-                echo 'JUnit Test has Failed'
-            }
-        }
 }
