@@ -29,7 +29,7 @@ pipeline {
      // }
         stage("Check-Deployment Logs"){
             steps{
-                checkErrors ('WARNING', 30)
+                checkErrors ('[ERROR]', 0)
             }
         } 
      
