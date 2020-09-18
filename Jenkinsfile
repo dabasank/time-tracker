@@ -21,11 +21,6 @@ pipeline {
                 junit 'reports/**/*.xml' 
             }
         }
-        post {
-            failure{
-                echo 'JUnit Test has Failed'
-            }
-        }
       //stage("Deploying to TOMCAT Server"){
         //  steps{
          //     sshagent(['deply_user'])
@@ -36,8 +31,11 @@ pipeline {
             steps{
                 checkErrors ('[ERROR]', 0)
             }
-        } 
-     
-      
+        }      
     }
+     post {
+            failure{
+                echo 'JUnit Test has Failed'
+            }
+        }
 }
